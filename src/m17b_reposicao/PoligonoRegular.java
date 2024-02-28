@@ -4,15 +4,15 @@ package m17b_reposicao;
 
 public abstract class PoligonoRegular {
 //------------------------------------------------------------------------------
-    protected int numeroLados;
-    protected float medidaLado;
-    protected String nome;
+    int numeroLados;
+    float medidaLado;
+    String nome;
 //------------------------------------------------------------------------------   
 
     
 //------------------------------------------------------------------------------
     public float getPerimetro() {
-        return numeroLados * medidaLado;
+        return getNumeroLados() * getMedidaLado();
     }
 //------------------------------------------------------------------------------    
     public abstract float getArea();
@@ -20,6 +20,49 @@ public abstract class PoligonoRegular {
 //------------------------------------------------------------------------------        
     @Override
     public String toString() {
-        return this.nome+": Perimetro: " + this.getPerimetro() + "; " + "Area: " + this.getArea();
+        return this.getNome()+": Perimetro: " + this.getPerimetro() + "; " + "Area: " + this.getArea();
     }    
+
+    /**
+     * @return the numeroLados
+     */
+    public int getNumeroLados() {
+        return numeroLados;
+    }
+
+    /**
+     * @param numeroLados the numeroLados to set
+     */
+    public void setNumeroLados(int numeroLados) {
+        this.numeroLados = numeroLados;
+    }
+
+    /**
+     * @return the medidaLado
+     */
+    public float getMedidaLado() {
+        return medidaLado;
+    }
+
+    /**
+     * @param medidaLado the medidaLado to set
+     */
+    public void setMedidaLado(float medidaLado) {
+        this.medidaLado = medidaLado;
+    }
+
+    /**
+     * @return the nome
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
 }
